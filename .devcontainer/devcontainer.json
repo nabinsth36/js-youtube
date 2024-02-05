@@ -25,13 +25,30 @@
 			"settings": {
 				"editor.fontSize": 20,
 				"terminal.integrated.fontSize": 18,
-				"editor.wordWrap": "on"
+				"editor.wordWrap": "on",
+				"editor.snippet": [
+					{
+						"language": "json",
+						"path": ".vscode/json-snippets.json",
+						"Print to Console": {
+							"prefix": "log",
+							"body": [
+								"console.log('$1');",
+								"$2"
+							],
+							"description": "Log output to console"
+
+					}
+				}
+			]
+
 			}
 			
 		}
-		
+	
 	 }
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	
 }
