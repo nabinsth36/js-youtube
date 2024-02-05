@@ -31,7 +31,7 @@
 						"language": "json",
 						"path": ".vscode/json-snippets.json",
 						"Print to Console": {
-							"prefix": "log",
+							"prefix": "cl",
 							"body": [
 								"console.log('$1');",
 								"$2"
