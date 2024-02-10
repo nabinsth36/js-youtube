@@ -8,4 +8,4 @@
 ( (name) => {
     // unnamed IIFE
     console.log(`DB CONNECTED TWO ${name}`);
-} )('hitesh')
+} )('hitesh') 
