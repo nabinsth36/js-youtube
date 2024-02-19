@@ -41,7 +41,7 @@ buttons.forEach(function (button) {
 ```
 
 ## project 2 solution
-```
+```javascript
 const form = document.querySelector('form');
 // this usecase will give you empty
 // const height = parseInt(document.querySelector('#height').value)
@@ -71,4 +71,27 @@ form.addEventListener('submit', function (e) {
     }
   }
 });
+```
+
+## project 3 solution
+```javascript
+const clock = document.getElementById('clock');
+// const clock = document.querySelector('#clock');
+// console.log(clock);
+
+// using function
+/* const currentDate = (date) => {
+  date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+};
+setInterval(currentDate, 1000);
+ */
+
+// Direct implement
+
+setInterval(function (date) {
+  date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
 ```
