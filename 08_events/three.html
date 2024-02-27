@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Chai aur JavaScript</h1>
+  </head>
+  <body>
+    <h1>Hello Chai aur Code</h1>
+    <button id="stop">STOP</button>
+    <button id="stopTime">Stop Time</button>
+  </body>
+  <script>
+    const sayDate = function (str) {
+      console.log(str, Date.now());
+    };
 
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    
-<script>
-    const sayHitesh = function(str){
-        console.log('Hitesh')
-    }
-    
-  const intervalId = setInterval(date, 1000, 'hi')
+    const changeTitle = function () {
+      document.querySelector("h1").innerHTML = "Best JS Series";
+    };
 
+    const changeMe = setTimeout(changeTitle, 3000);
 
+    const stopbutton = document.querySelector("#stop");
 
-
-</script>
-</body>
+    stopbutton.addEventListener("click", function (e) {
+      e.preventDefault();
+      clearTimeout(changeMe);
+    });
+    const callMe = setInterval(sayDate, 2000, "Hi");
+    const stopTime = document.querySelector("#stopTime");
+    stopTime.addEventListener("click", function (e) {
+      e.preventDefault;
+      clearInterval(callMe);
+    });
+  </script>
 </html>
