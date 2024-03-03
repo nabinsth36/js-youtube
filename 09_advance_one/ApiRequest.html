@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    s Value State Description 0 UNSENT Client has been created. open() not
+    called yet. 1 OPENED open() has been called. 2 HEADERS_RECEIVED send() has
+    been called, and headers and status are available. 3 LOADING Downloading;
+    responseText holds partial data. 4 DONE The operation is complete.
+
+    <div
+      id="card"
+      style="
+        width: 300px;
+        height: 460px;
+        background-color: #efefef;
+        color: green;
+        border: rgb(30, 4, 123);
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding-top: 20px;
+      "
+    >
+      <img id="avatar" />
+      <p
+        id="follower"
+        style="
+          text-align: center;
+          display: flex;
+          background-color: hsl(60, 100%, 50%);
+        "
+      ></p>
+      <p id="created" style="color: #000; margin: 0px"></p>
+      <p id="htmlUrl"></p>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/nabin36";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    let data;
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+
+      if (xhr.readyState === 4) {
+        data = JSON.parse(this.responseText);
+        // console.log(typeof data);
+        // console.log(data.followers);
+        // const avatarUrl = data.avatar_url;
+        document.querySelector(
+          "#avatar"
+        ).innerHTML = `<img src = ${data.avatar_url}
+    width="250px"
+        height="300px"
+        style="
+          display: flex;
+          justify-content: center;
+          border: #fcd1d1;"
+        />`;
+        // console.log(avatarID);
+
+        document.querySelector(
+          "#follower"
+        ).innerHTML = `<p>Follower Numbers = ${data.followers}</p>`;
+
+        document.getElementById(
+          "htmlUrl"
+        ).innerHTML = `<p>HTML URL = ${data.html_url}</p>`;
+      }
+    };
+    xhr.send();
+  </script>
+</html>
