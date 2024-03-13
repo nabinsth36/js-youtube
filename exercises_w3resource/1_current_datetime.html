@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Date and Time in a Specific Format</title>
+  </head>
+  <body style="background-color: #1f1f1f; color: aliceblue; padding: 50px">
+    <h1 style="color: aqua">JavaScript Basic: Exercise-1 with Solution</h1>
+    <hr />
+    <h2>
+      Write a JavaScript program to display the current day and time in the
+      following format.
+    </h2>
+    <div
+      class="example"
+      style="font-family: 'Courier New', Courier, monospace; font-size: 15px"
+    >
+      <h3>Today is : Tuesday.</h3>
+      <h3>Current time is : 10 PM : 30 : 38</h3>
+    </div>
+    <hr />
+    <div
+      class="sol"
+      style="
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        font-size: 40px;
+      "
+    >
+      <p style="color: aqua">Solution:</p>
+    </div>
+  </body>
+
+  <script>
+    const sol = document.getElementsByClassName("sol");
+    // console.log(sol);
+    const p = document.createElement("p");
+    p.className = "day";
+    p.innerHTML = `Today is : ${today()} `;
+    document.body.appendChild(p);
+    p.style.fontSize = "25px";
+    p.style.fontFamily = "'Courier New', Courier, monospace";
+
+    const p2 = document.createElement("p");
+    p2.style.fontSize = "25px";
+    p2.style.fontFamily = "'Courier New', Courier, monospace";
+    // p2.className = "time";
+    /*p2.innerHTML = `Current time is : ${currentTime()}`;
+    document.body.appendChild(p2);
+ */
+    const addText = document.createTextNode(
+      `Current time is : ${currentTime()}`
+    );
+    p2.appendChild(addText);
+    document.body.appendChild(p2);
+
+    function today() {
+      const myDate = new Date();
+      const day = myDate.getDay();
+      const dayNames = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      return dayNames[day];
+    }
+
+    function currentTime() {
+      const currentDate = new Date();
+      const hour = currentDate.getHours();
+      const minute = currentDate.getMinutes();
+      const second = currentDate.getSeconds();
+      const currentDateStamp = `${AMPM(hour)} : ${minute} : ${second}`;
+      return currentDateStamp;
+    }
+
+    function AMPM(hour) {
+      if (hour >= 12) {
+        return `${hour - 12}  PM`;
+      } else {
+        return `${hour} AM`;
+      }
+    }
+
+    // console.log(today());
+    // console.log(currentTime());
+  </script>
+</html>
