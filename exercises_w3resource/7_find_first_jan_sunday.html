@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find first January be a Sunday</title>
+    <style>
+      div {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript program to find out if 1st January will be a Sunday
+      between 2014 and 2050.
+    </h1>
+
+    <script>
+      const h2 = document.createElement("h2");
+      const addText1 = document.createTextNode(
+        `1st January is being a Sunday for year:`
+      );
+      h2.appendChild(addText1);
+      document.body.appendChild(h2);
+
+      for (year = 2014; year <= 2050; year++) {
+        let d = new Date(year, 0, 1);
+
+        if (d.getDay() === 0) {
+          const div = document.createElement("div");
+          const addText2 = document.createTextNode(year);
+          div.appendChild(addText2);
+          document.body.appendChild(div);
+        }
+      }
+
+      //   checkDay();
+    </script>
+  </body>
+</html>

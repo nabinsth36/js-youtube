@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form example</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="guessfield">name</label>
+      <input type="text" id="guessfield" />
+      <input type="submit" value="submit" id="submit" />
+    </form>
+  </body>
+
+  <script>
+    const userInput = document.getElementById("guessfield");
+    console.log(userInput);
+    const btnSubmit = document.getElementById("submit");
+
+    btnSubmit.addEventListener("click", function (e) {
+      e.preventDefault();
+      const guess = parseInt(userInput.value);
+      console.log(guess);
+    });
+  </script>
+</html>

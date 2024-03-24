@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Current Date</title>
+
+    <style>
+      div {
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #424242; color: aliceblue">
+    <h1>3. Write a JavaScript program to get the current date.</h1>
+
+    <h2 style="background-color: black; padding: 6px 20px">
+      Expected Output :
+    </h2>
+    <p>mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</p>
+
+    <hr />
+
+    <script>
+      function myday(month, date, year) {
+        const today = new Date();
+
+        this.month = today.getMonth();
+        this.date = today.getDate();
+        this.year = today.getFullYear();
+
+        this.month++;
+        if (this.month < 10) {
+          this.month = "0" + this.month;
+        }
+
+        if (this.date < 10) {
+          this.date = "0" + this.date;
+        }
+      }
+
+      myday.prototype.dateOne = function () {
+        return `${this.month}-${this.date}-${this.year}`;
+      };
+
+      myday.prototype.dateTwo = function () {
+        return `${this.month}/${this.date}/${this.year}`;
+      };
+
+      myday.prototype.dateThree = function () {
+        return `${this.date}-${this.month}-${this.year}`;
+      };
+
+      myday.prototype.dateFour = function () {
+        return `${this.date}/${this.month}/${this.year}`;
+      };
+
+      const dateStyle = new myday();
+
+      console.log(dateStyle.dateOne());
+      console.log(dateStyle.dateTwo());
+      console.log(dateStyle.dateThree());
+      console.log(dateStyle.dateFour());
+
+      ///////////////////////////////////////////////////////////////
+
+      const div = document.createElement("div");
+      const div2 = document.createElement("div");
+      const div3 = document.createElement("div");
+      const div4 = document.createElement("div");
+
+      //   console.log(div);
+      //   const addText = document.createTextNode(dateOne());
+      div.innerHTML = `Date (mm-dd-yyyy) : <span style="color:yellow" >${dateStyle.dateOne()}</span>`;
+      div.style.fontFamily = "arial";
+      div.style.fontSize = "25px";
+
+      div2.innerHTML = `Date (mm/dd/yyyy) : <span style="color:yellow" >${dateStyle.dateTwo()}</span>`;
+      div2.style.fontFamily = "arial";
+      div2.style.fontSize = "25px";
+
+      div3.innerHTML = `Date (dd-mm-yyyy) : <span style="color: cyan"> ${dateStyle.dateThree()}</span>`;
+      div3.style.fontFamily = "arial";
+      div3.style.fontSize = "25px";
+
+      div4.innerHTML = `Date(dd/mm/yyyy) : <span style="color: cyan"> ${dateStyle.dateFour()}</span>`;
+      div4.style.fontFamily = "arial";
+      div4.style.fontSize = "25px";
+
+      document.body.appendChild(div);
+      document.body.appendChild(div2);
+      document.body.appendChild(div3);
+      document.body.appendChild(div4);
+    </script>
+  </body>
+</html>

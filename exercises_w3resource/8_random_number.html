@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random number</title>
+
+    <style>
+      body {
+        background-color: #424242;
+        color: aliceblue;
+        padding: 25px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      form.form-numcheck {
+        display: table;
+        font-size: 20px;
+        padding: 20px;
+      }
+
+      div.form-numcheck {
+        display: table-row;
+      }
+
+      label,
+      input {
+        display: table-cell;
+        margin-bottom: 10px;
+      }
+
+      label {
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      8. Write a JavaScript program where the program takes a random integer
+      between 1 and 10, and the user is then prompted to input a guess number.
+      The program displays a message "Good Work" if the input matches the guess
+      number otherwise "Not matched".
+    </h1>
+    <hr />
+
+    <form class="form-numcheck">
+      <div class="form-numcheck">
+        <label for="guessField">Enter random number between 1 to 10: </label>
+        <input type="text" id="guessField" />
+      </div>
+      <div class="form-numcheck">
+        <input type="submit" value="Check!" id="check" />
+      </div>
+    </form>
+    <div>Your Guess: <span id="entered-num"></span></div>
+    <div>Result: <span id="result"></span></div>
+    <div id="alert"></div>
+  </body>
+  <script>
+    const randomNumber = parseInt(Math.random() * 10 + 1);
+    // console.log(randomNumber);
+    const userInput = document.querySelector("#guessField");
+    const check = document.getElementById("check");
+    const enteredNum = document.getElementById("entered-num");
+    const result = document.getElementById("result");
+    const alert = document.getElementById("alert");
+
+    const playGame = true;
+
+    if (playGame) {
+      check.addEventListener("click", function (e) {
+        e.preventDefault();
+        const guess = parseInt(userInput.value);
+        alert.innerHTML = "";
+        validateGuess(guess);
+      });
+    }
+
+    function validateGuess(guess) {
+      if (isNaN(guess)) {
+        displayAlert("Please enter any valid number");
+      } else if (guess < 1) {
+        displayAlert("Please enter a number greater than or equal 1");
+      } else if (guess > 10) {
+        displayAlert("Please enter a number less than or equal 10");
+      } else {
+        displayGuess(guess);
+        displayMessage();
+        checkGuess(guess);
+      }
+    }
+    function displayGuess(guess) {
+      // enteredNum.innerHTML = "";
+      enteredNum.innerHTML = guess;
+    }
+
+    function checkGuess(guess) {
+      if (guess === randomNumber) {
+        displayMessage(`Good Work, Random number was ${randomNumber}`);
+        endGame();
+      } else if (guess < randomNumber) {
+        displayMessage(`Too Low`);
+      } else if (guess > randomNumber) {
+        displayMessage(`Too High`);
+      }
+    }
+
+    function displayMessage(message) {
+      result.innerHTML = message;
+    }
+
+    function displayAlert(message) {
+      alert.innerHTML = message;
+    }
+
+    function endGame() {
+      userInput.value = "";
+      userInput.setAttribute("disabled", "");
+      playGame = false;
+    }
+  </script>
+</html>
