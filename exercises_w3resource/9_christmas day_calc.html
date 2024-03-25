@@ -3,7 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Day</title>
+    <title>Days remaining Christmas Day</title>
+    <style>
+      .days-left {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 40px;
+        background-color: yellow;
+        color: red;
+        text-align: center;
+        padding: 40px;
+        margin: 40px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>
+      Write a JavaScript program to calculate the days left before Christmas.
+    </h1>
+    <hr />
+  </body>
+  <script>
+    const today = new Date();
+
+    const cmas = new Date(today.getFullYear(), 11, 25);
+    if (today.getMonth() == 11 && today.getDate() > 25) {
+      cmas.setFullYear(cmas.getFullYear() + 1);
+    }
+
+    const one_day = 1000 * 60 * 60 * 24;
+
+    const days_left = Math.ceil((cmas.getTime() - today.getTime()) / one_day);
+
+    console.log(days_left + " days left before Christmas");
+
+    const div = document.createElement("div");
+    div.className = "days-left";
+    const addText = document.createTextNode(
+      `${days_left} days left before Christmas`
+    );
+    div.appendChild(addText);
+    document.body.appendChild(div);
+  </script>
 </html>
