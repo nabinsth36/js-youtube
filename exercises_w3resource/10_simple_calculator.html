@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        background-color: black;
+        color: aliceblue;
+        padding: 15px;
+        text-align: left;
+        display: block;
+      }
+      .col {
+        width: 600px;
+        background-color: #424242;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .label {
+        padding: 10px;
+        font-size: 20px;
+        color: aliceblue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .input {
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      .submit {
+        width: 60px;
+        height: 60px;
+
+        font-size: 30px;
+        color: black;
+        justify-content: right;
+        margin: 10px;
+        font-weight: 800;
+      }
+
+      #result {
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript program to calculate multiplication and division of two
+      numbers (input from the user).
+    </h1>
+
+    <form>
+      <div class="col">
+        <label for="num1" class="label">1st Number</label>
+        <input type="text" id="num1" class="input" />
+      </div>
+      <div class="col">
+        <label for="num2" class="label">2nd Number</label>
+        <input type="text" id="num2" class="input" />
+      </div>
+      <div class="col">
+        <input type="button" id="add" value="+" class="submit" />
+        <input type="submit" id="subtract" value="−" class="submit" />
+        <input type="submit" id="multiply" value="⨉" class="submit" />
+        <input type="submit" id="divide" value="÷" class="submit" />
+      </div>
+      <div id="result">Result =</div>
+    </form>
+  </body>
+  <script>
+    const add = document.getElementById("add");
+    const subtract = document.getElementById("subtract");
+    const multiply = document.getElementById("multiply");
+    const divide = document.getElementById("divide");
+    const result = document.getElementById("result");
+
+    add.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Retrieve current values of num and num2
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+
+      // Check if inputs are valid numbers
+      const validNum1 = validateInput(num1);
+      const validNum2 = validateInput(num2);
+
+      if (validNum1 !== undefined && validNum2 !== undefined) {
+        const sum = validNum1 + validNum2;
+        result.textContent = `Result = ${sum} `;
+      }
+    });
+
+    subtract.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Retrieve current values of num and num2
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+
+      // Check if inputs are valid numbers
+      const validNum1 = validateInput(num1);
+      const validNum2 = validateInput(num2);
+
+      if (validNum1 !== undefined && validNum2 !== undefined) {
+        const subt = validNum1 - validNum2;
+        result.textContent = `Result = ${subt} `;
+      }
+    });
+
+    multiply.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Retrieve current values of num and num2
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+
+      // Check if inputs are valid numbers
+      const validNum1 = validateInput(num1);
+      const validNum2 = validateInput(num2);
+
+      if (validNum1 !== undefined && validNum2 !== undefined) {
+        const mult = validNum1 * validNum2;
+        result.textContent = `Result = ${mult} `;
+      }
+    });
+
+    divide.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Retrieve current values of num and num2
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+
+      // Check if inputs are valid numbers
+      const validNum1 = validateInput(num1);
+      const validNum2 = validateInput(num2);
+
+      if (validNum1 !== undefined && validNum2 !== undefined) {
+        const div = validNum1 / validNum2;
+        result.textContent = `Result = ${div} `;
+      }
+    });
+
+    function validateInput(num) {
+      if (isNaN(num)) {
+        alert("Please enter a valid number");
+        return undefined; // Return undefined to indicate invalid input
+      } else if (num === "") {
+        alert("Please enter any one number");
+        return undefined; // Return undefined to indicate invalid input
+      } else {
+        return num;
+      }
+    }
+  </script>
+</html>
