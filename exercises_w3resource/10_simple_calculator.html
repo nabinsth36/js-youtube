@@ -9,44 +9,58 @@
         background-color: black;
         color: aliceblue;
         padding: 15px;
-        text-align: left;
-        display: block;
+        font-family: Arial, Helvetica, sans-serif;
       }
-      .col {
-        width: 600px;
+      .calculator {
+        max-width: 600px;
+        margin: 0 auto;
         background-color: #424242;
         padding: 20px;
+        border-radius: 10px;
+      }
+
+      .input-group {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
       }
 
       .label {
-        padding: 10px;
+        flex: 1;
+        margin-right: 10px;
         font-size: 20px;
-        color: aliceblue;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
 
       .input {
-        font-size: 25px;
-        font-weight: 600;
+        flex: 2;
+        padding: 10px;
+        font-size: 20px;
+        border: 2px solid #555;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
       }
 
       .submit {
         width: 60px;
         height: 60px;
-
+        margin: 0 10px;
         font-size: 30px;
         color: black;
-        justify-content: right;
-        margin: 10px;
-        font-weight: 800;
+        border: none;
+        border-radius: 50%;
+        background-color: #ffd700;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit:hover {
+        background-color: #ffa500;
       }
 
       #result {
         font-size: 25px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: 600;
+        font-weight: bold;
         padding-top: 20px;
       }
     </style>
@@ -57,23 +71,25 @@
       numbers (input from the user).
     </h1>
 
-    <form>
-      <div class="col">
+    <div class="calculator">
+      <h1>Simple Calculator</h1>
+
+      <div class="input-group">
         <label for="num1" class="label">1st Number</label>
         <input type="text" id="num1" class="input" />
       </div>
-      <div class="col">
+      <div class="input-group">
         <label for="num2" class="label">2nd Number</label>
         <input type="text" id="num2" class="input" />
       </div>
-      <div class="col">
+      <div class="input-group">
         <input type="button" id="add" value="+" class="submit" />
-        <input type="submit" id="subtract" value="−" class="submit" />
-        <input type="submit" id="multiply" value="⨉" class="submit" />
-        <input type="submit" id="divide" value="÷" class="submit" />
+        <input type="button" id="subtract" value="−" class="submit" />
+        <input type="button" id="multiply" value="⨉" class="submit" />
+        <input type="button" id="divide" value="÷" class="submit" />
       </div>
       <div id="result">Result =</div>
-    </form>
+    </div>
   </body>
   <script>
     const add = document.getElementById("add");
@@ -84,58 +100,22 @@
 
     add.addEventListener("click", function (e) {
       e.preventDefault();
-
-      // Retrieve current values of num and num2
-      const num1 = parseFloat(document.getElementById("num1").value);
-      const num2 = parseFloat(document.getElementById("num2").value);
-
-      // Check if inputs are valid numbers
-      const validNum1 = validateInput(num1);
-      const validNum2 = validateInput(num2);
-
-      if (validNum1 !== undefined && validNum2 !== undefined) {
-        const sum = validNum1 + validNum2;
-        result.textContent = `Result = ${sum} `;
-      }
+      performOperation("+");
     });
-
     subtract.addEventListener("click", function (e) {
       e.preventDefault();
-
-      // Retrieve current values of num and num2
-      const num1 = parseFloat(document.getElementById("num1").value);
-      const num2 = parseFloat(document.getElementById("num2").value);
-
-      // Check if inputs are valid numbers
-      const validNum1 = validateInput(num1);
-      const validNum2 = validateInput(num2);
-
-      if (validNum1 !== undefined && validNum2 !== undefined) {
-        const subt = validNum1 - validNum2;
-        result.textContent = `Result = ${subt} `;
-      }
+      performOperation("-");
     });
-
     multiply.addEventListener("click", function (e) {
       e.preventDefault();
-
-      // Retrieve current values of num and num2
-      const num1 = parseFloat(document.getElementById("num1").value);
-      const num2 = parseFloat(document.getElementById("num2").value);
-
-      // Check if inputs are valid numbers
-      const validNum1 = validateInput(num1);
-      const validNum2 = validateInput(num2);
-
-      if (validNum1 !== undefined && validNum2 !== undefined) {
-        const mult = validNum1 * validNum2;
-        result.textContent = `Result = ${mult} `;
-      }
+      performOperation("*");
     });
-
     divide.addEventListener("click", function (e) {
       e.preventDefault();
+      performOperation("/");
+    });
 
+    function performOperation(operator) {
       // Retrieve current values of num and num2
       const num1 = parseFloat(document.getElementById("num1").value);
       const num2 = parseFloat(document.getElementById("num2").value);
@@ -145,10 +125,24 @@
       const validNum2 = validateInput(num2);
 
       if (validNum1 !== undefined && validNum2 !== undefined) {
-        const div = validNum1 / validNum2;
-        result.textContent = `Result = ${div} `;
+        let resultValue;
+        if (operator === "+") {
+          resultValue = validNum1 + validNum2;
+        } else if (operator === "-") {
+          resultValue = validNum1 - validNum2;
+        } else if (operator === "*") {
+          resultValue = validNum1 * validNum2;
+        } else if (operator === "/") {
+          if (validNum2 === 0) {
+            alert("Cannot divide by zero");
+            return;
+          }
+          resultValue = validNum1 / validNum2;
+        }
+
+        result.textContent = `Result = ${resultValue} `;
       }
-    });
+    }
 
     function validateInput(num) {
       if (isNaN(num)) {
