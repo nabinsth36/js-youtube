@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website URL</title>
+  </head>
+  <body>
+    Write a JavaScript program to get the website URL (loading page).
+  </body>
+  <script>
+    // log the current website URL to the console
+    // alert(document.URL);
+
+    const div = document.createElement("div");
+    // console.log(div);
+    const addText = document.createTextNode(document.URL);
+    div.appendChild(addText);
+    document.body.appendChild(div);
+  </script>
+</html>

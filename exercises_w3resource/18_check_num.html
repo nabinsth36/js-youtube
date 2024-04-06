@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Number</title>
+  </head>
+  <body>
+    <h2>
+      18. Write a JavaScript program to check a pair of numbers and return true
+      if one of the numbers is 50 or if their sum is 50.
+    </h2>
+    <hr />
+    <h1>JavaScript Number Checker</h1>
+    <h3>Enter Two Numbers</h3>
+    <form id="numberForm">
+      <label for="num1">First Number:</label>
+      <input type="text" id="num1" placeholder="Enter first number" required />
+      <label for="num2">Second Number:</label>
+      <input type="text" id="num2" placeholder="Enter second number" required />
+      <button type="submit">Check</button>
+    </form>
+    <div id="result"></div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const numberForm = document.getElementById("numberForm");
+      const resultDiv = document.getElementById("result");
+
+      numberForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const num1 = parseInt(document.getElementById("num1").value, 10);
+        const num2 = parseInt(document.getElementById("num2").value, 10);
+
+        if (!isNaN(num1) && !isNaN(num2)) {
+          const result = checkNum(num1, num2);
+          resultDiv.textContent = `Result : ${result}`;
+        } else {
+          resultDiv.textContent = "Please enter valid numbers.";
+        }
+      });
+
+      function checkNum(n1, n2) {
+        return n1 === 50 || n2 === 50 || n1 + n2 === 50;
+      }
+    });
+  </script>
+</html>

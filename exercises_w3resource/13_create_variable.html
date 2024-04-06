@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Variable</title>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript exercise to create a variable using a user-defined
+      name.
+    </h1>
+  </body> -->
+
+  <script>
+    let name = "Nabin Shrestha";
+
+    let new_name = "nabin pradhan";
+
+    this[name] = new_name;
+    console.log(name);
+    console.log(this[name]);
+
+    console.log("////////////////////////////////");
+
+    function user(firstName, lastName) {
+      let username = `${firstName} ${lastName}`;
+      let obj = {};
+      obj[username] = {};
+      let arr = ["age", "gender", "occupation"];
+      for (let bio of arr) {
+        let ask = prompt(`Please enter your ${bio}`);
+        obj[username][bio] = ask;
+      }
+      return obj;
+    }
+
+    console.log(user("Nabin", "Shrestha"));
+  </script>
+</html>

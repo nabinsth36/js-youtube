@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+      h1,
+      h3 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #result {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Temperature Converter</h1>
+    <h3>
+      Formula: c/5 = (f-32)/9 [where c = temperature in Celsius and f =
+      temperature in Fahrenheit]
+    </h3>
+    <div>
+      <form>
+        <label for="inputData">Enter Temperature for Conversion:</label>
+        <input type="text" id="inputData" placeholder="Enter temperature" />
+        <input type="button" id="convertCtoF" value="Convert C to F" />
+        <input type="button" id="convertFtoC" value="Convert F to C" />
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("convertCtoF")
+          .addEventListener("click", function () {
+            convertTemperature("CtoF");
+          });
+
+        document
+          .getElementById("convertFtoC")
+          .addEventListener("click", function () {
+            convertTemperature("FtoC");
+          });
+      });
+
+      function convertTemperature(conversionType) {
+        const userInput = parseFloat(
+          document.getElementById("inputData").value
+        );
+        const result = document.getElementById("result");
+
+        if (isNaN(userInput)) {
+          result.innerText = "Please Enter a Valid Temperature.";
+          return;
+        }
+
+        let convertedTemp;
+
+        if (conversionType === "CtoF") {
+          convertedTemp = `${((userInput * 9) / 5 + 32).toFixed(
+            2
+          )} degree Fahrenheit`;
+        } else if (conversionType === "FtoC") {
+          convertedTemp = `${(((userInput - 32) * 5) / 9).toFixed(
+            2
+          )} degree Celsius`;
+        }
+
+        result.innerText = `Result: ${convertedTemp}`;
+      }
+
+      /////////////////////////////////////////////////////////////////////////////////////////
+
+      //   CtoF.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     const userInput = parseFloat(
+      //       document.getElementById("inputData").value
+      //     );
+      //     const result = document.getElementById("result");
+      //     result.innerText = CelsiusToFahrenheit(userInput);
+      //   });
+
+      //   FtoC.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     const userInput = parseFloat(
+      //       document.getElementById("inputData").value
+      //     );
+      //     const result = document.getElementById("result");
+      //     result.innerText = FahrenheitToCelsius(userInput);
+      //   });
+
+      //   function FahrenheitToCelsius(temp) {
+      //     return `${(((temp - 32) * 5) / 9).toFixed(2)} degree Celsius`;
+      //   }
+
+      //   function CelsiusToFahrenheit(temp) {
+      //     return `${((temp * 9) / 5 + 32).toFixed(2)} degree Fahrenheit`;
+      //   }
+      //////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+  </body>
+</html>
