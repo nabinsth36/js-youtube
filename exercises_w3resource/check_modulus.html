@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      25. Write a JavaScript program to check whether a given positive number is
+      a multiple of 3 or 7.
+    </h2>
+  </body>
+
+  <script>
+    const multipleof3or7 = (num) => {
+      if (num > 0) {
+        return num % 3 === 0 || num % 7 === 0 ? true : false;
+      }
+    };
+
+    console.log(multipleof3or7(65));
+  </script>
+</html>
