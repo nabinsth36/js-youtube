@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      24. Write a JavaScript program to create another string from a given
+      string with the first character of the given string added to the front and
+      back.
+    </h2>
+  </body>
+  <script>
+    const front_back = function (str) {
+      const firstChar = str.charAt(0);
+      return firstChar + str + firstChar;
+    };
+
+    console.log(front_back("a"));
+  </script>
+</html>
