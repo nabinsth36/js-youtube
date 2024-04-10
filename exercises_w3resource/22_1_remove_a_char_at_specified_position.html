@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      22. Write a JavaScript program to remove a character at the specified
+      position in a given string and return the modified string.
+    </h2>
+  </body>
+  <script>
+    function remove_character(str, char_pos) {
+      const part1 = str.substring(0, char_pos);
+      const part2 = str.substring(char_pos + 1, str.length);
+      return part1 + part2;
+    }
+
+    console.log(remove_character("Nabin Shrestha", 4));
+
+    ////////////////////////////////////////////////
+
+    function remove(string, index) {
+      return string.replace(string.charAt(index), "");
+    }
+
+    console.log(remove("Matthew", 1));
+  </script>
+</html>
