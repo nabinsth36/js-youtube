@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check difference</title>
+  </head>
+  <body>
+    <h2>
+      Write a JavaScript program to check whether a given integer is within 20
+      of 100 or 400.
+    </h2>
+  </body>
+  <script>
+    function testHundred(x) {
+      return Math.abs(100 - x) <= 20 || Math.abs(400 - x) <= 20;
+    }
+
+    console.log(testHundred(80));
+  </script>
+</html>
