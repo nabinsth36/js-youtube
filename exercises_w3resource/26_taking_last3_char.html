@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      26. Write a JavaScript program to create a string from a given string.
+      This is done by taking the last 3 characters and adding them at both the
+      front and back. The string length must be 3 or more.
+    </h2>
+  </body>
+  <script>
+    const front_back = (str) => {
+      if (str.length >= 3) {
+        const newString = str.slice(-3) + str + str.slice(-3);
+        return newString;
+      } else {
+        return "write a bit long word";
+      }
+    };
+    console.log(front_back("hello"));
+  </script>
+</html>
