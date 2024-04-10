@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Modify string using split and join</h2>
+  </body>
+  <script>
+    let myName = "Nabin Shrestha";
+    let changedName = myName.split(" ").join("");
+
+    console.log(changedName);
+
+    /////////////////////////////////////
+    // Data Validation
+
+    let userInput = " Nabin Shrestha ";
+    let cleanedInput = userInput.trim();
+    console.log(cleanedInput);
+
+    /////////////////////////////////////
+
+    // URL Formatting
+
+    let userName = "Nabin Sth";
+    let formattedUserName = encodeURIComponent(userName);
+    let url = "https://example.com/profile/" + formattedUserName;
+    console.log(url);
+
+    ///////////////////////////////////////
+    // Text Processing
+
+    let text = `My name is Nabin shrestha. I live in Bharatpur`;
+    let words = text.split(" ");
+    let wordCount = words.length;
+    console.log(words);
+    console.log(wordCount);
+
+    /////////////////////////////////////////
+    // Formatting Output
+
+    let firstName = "   Nabin ";
+    let lastName = "  Shrestha  ";
+    let fullName = `${firstName} ${lastName}`;
+    console.log(fullName);
+    let formattedFullName = fullName.replace(/\s+/g, " ");
+
+    console.log(formattedFullName);
+  </script>
+</html>
