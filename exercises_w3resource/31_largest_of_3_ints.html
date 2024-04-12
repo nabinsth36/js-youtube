@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      31. Write a JavaScript program to find the largest of three given
+      integers.
+    </h2>
+  </body>
+  <script>
+    const largeNum = (n1, n2, n3) => {
+      let largeNum = 0;
+      largeNum = n1 > n2 ? n1 : n2;
+      largeNum = n3 > largeNum ? n3 : largeNum;
+      return largeNum;
+    };
+
+    console.log(largeNum(500, 900, 2005));
+  </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      28. Write a JavaScript program to check whether two given integer values
+      are in the range 50..99 (inclusive). Return true if either of them falls
+      within the range.
+    </h2>
+  </body>
+  <script>
+    const checkValue = (num1, num2) => {
+      return (num1 >= 50 && num1 <= 99) || (num2 >= 50 && num2 <= 99)
+        ? true
+        : false;
+    };
+
+    console.log(checkValue(59, 35));
+  </script>
+</html>

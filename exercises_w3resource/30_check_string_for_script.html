@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      30. Write a JavaScript program to check whether a string "Script" appears
+      at the 5th (index 4) position in a given string. If "Script" appears in
+      the string, return the string without "Script" otherwise return the
+      original one.
+    </h2>
+  </body>
+  <script>
+    const checkStr = (str) => {
+      //   return str.search("Script");
+      console.log(str.length);
+      if (str.length < 6) {
+        return str;
+      }
+      let result_str = str;
+
+      // Check if the substring from index 10 to index 4 (exclusive) is equal to 'Script'
+
+      if (str.substring(10, 4) == "Script") {
+        // If true, update result_str to exclude the substring 'Script' from index 4 to the end
+        result_str = str.substring(0, 4) + str.substring(10, str.length);
+      }
+      return result_str;
+      //return str.includes("Script", 4) ? str.slice(0, 4) : str;
+    };
+    console.log(checkStr("Javas"));
+    console.log(checkStr("JavaScript"));
+    console.log(checkStr("JavaScriptness"));
+    console.log(checkStr("Scriptness"));
+    console.log(checkStr("CoffeeScript"));
+  </script>
+</html>
