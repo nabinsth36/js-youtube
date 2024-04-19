@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum in Range</title>
+    <style>
+      #num1,
+      #num2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      #result {
+        margin-top: 30px;
+      }
+      #submit {
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      39. Write a JavaScript program to compute the sum of the two given
+      integers. If the sum is in the range 50..80 return 65 otherwise return 80.
+    </h2>
+    <form action="">
+      <div class="col">
+        <label for="num1">First Number :</label>
+        <input type="text" id="num1" />
+      </div>
+      <div class="col">
+        <label for="num2">Second Number :</label>
+        <input type="text" id="num2" />
+      </div>
+      <div class="col">
+        <button id="submit">Calculate</button>
+      </div>
+    </form>
+    <div id="result"></div>
+  </body>
+  <script>
+    const submit = document.getElementById("submit");
+
+    submit.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const result = document.getElementById("result");
+
+      // Calculate the sum
+      const sum = SuminRange(num1, num2);
+
+      // Display the result in the result element
+      result.textContent = `Result: ${sum}`;
+
+      // Apply some styling to the result element
+      result.style.border = "1px solid black";
+      result.style.fontSize = "16px";
+      result.style.background = "#efefef";
+    });
+
+    function SuminRange(x, y) {
+      let sum = x + y;
+      return sum >= 50 && sum <= 80 ? 65 : 80;
+    }
+
+    // console.log(SuminRange(35, 50));
+  </script>
+</html>

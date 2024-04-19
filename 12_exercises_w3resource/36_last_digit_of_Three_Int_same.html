@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      36. Write a JavaScript program that checks whether the last digit of three
+      positive integers is the same.
+    </h2>
+  </body>
+  <script>
+    const lastDigitOfThreeInt = (int1, int2, int3) => {
+      const str1 = !isNaN(int1)
+        ? int1.toString()
+        : console.log(`${int1} is invalid to compare`);
+      const str2 = !isNaN(int2)
+        ? int2.toString()
+        : console.log(`${int2} is invalid to compare`);
+      const str3 = !isNaN(int3)
+        ? int3.toString()
+        : console.log(`${int3} is invalid to compare`);
+
+      const lastDigit1 = str1.charAt(str1.length - 1);
+      const lastDigit2 = str2.charAt(str2.length - 1);
+      const lastDigit3 = str3.charAt(str3.length - 1);
+      return lastDigit1 === lastDigit2 && lastDigit2 === lastDigit3
+        ? true
+        : false;
+    };
+
+    console.log(lastDigitOfThreeInt(59, 49, 9));
+  </script>
+</html>

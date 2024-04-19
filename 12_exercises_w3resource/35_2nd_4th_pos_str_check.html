@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      35. Write a program to check whether a specified character exists between
+      the 2nd and 4th positions in a given string.
+    </h2>
+  </body>
+  <script>
+    const isCharacterBetween2ndAnd4th = (str, char) => {
+      // Check if the length of the string is at least 4 characters
+      if (str.length >= 4) {
+        // Iterate through positions 2 to 4 and check if any of them match the specified character
+        for (let i = 1; i <= 3; i++) {
+          if (str.charAt(i) === char) {
+            // If the character is found between 2nd and 4th positions, return true
+            return true;
+          }
+        }
+      }
+      // If the character is not found between the 2nd and 4th positions, or the string is too short, return false
+      return false;
+    };
+
+    // Example usage:
+    const inputString = "example";
+    const specifiedCharacter = "x";
+
+    console.log(isCharacterBetween2ndAnd4th(inputString, specifiedCharacter)); // Output: true
+
+    ///////////////////////////////////////////////////////
+
+    const second_4th = (str, char) => {
+      // initialize a counter valriable to 0
+      let ctr = 0;
+
+      // Use a for loop to iterate through each character in str
+      for (let i = 0; i < str.length; i++) {
+        // Check if the current character equals char and the index is between 1 and 3 (inclusive)
+        if (str.charAt(i) === char && i >= 1 && i <= 3) {
+          // Set the counter to 1 and break out of the loop
+          ctr = 1;
+          break;
+        }
+      }
+
+      // Check if the counter is 1 and return true, otherwise return false
+      return ctr === 1;
+    };
+
+    console.log(second_4th("TypeScript", "a"));
+    console.log(second_4th("JavaScript", "a"));
+    console.log(second_4th("Python", "t"));
+    console.log(second_4th("C++", "C"));
+    console.log(second_4th("global", "g"));
+  </script>
+</html>

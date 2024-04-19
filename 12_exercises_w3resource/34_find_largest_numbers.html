@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      34. Write a JavaScript program to find the largest number from the two
+      given positive integers. The two numbers are in the range 40..60
+      inclusive.
+    </h2>
+  </body>
+  <script>
+    const largestNumberInRange = (x, y) => {
+      if (x >= 40 && x <= 60 && y >= 40 && y <= 60)
+        if (x === y) {
+          return "both numbers are same";
+        } else if (x > y) return `${x} is largest number`;
+        else {
+          return `${y} is largest number`;
+        }
+      else return `try again`;
+    };
+    console.log(largestNumberInRange(58, 55));
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      33. Write a JavaScript program to check whether two numbers are in the
+      range 40..60 or 70..100 inclusive.
+    </h2>
+  </body>
+  <script>
+    const inRange = (n1, n2) => {
+      const result =
+        (n1 >= 40 && n1 <= 60 && n2 >= 40 && n2 <= 60) ||
+        (n1 >= 70 && n1 <= 100 && n2 >= 70 && n2 <= 100)
+          ? true
+          : false;
+
+      return result;
+    };
+
+    console.log(inRange(58, 58));
+  </script>
+</html>

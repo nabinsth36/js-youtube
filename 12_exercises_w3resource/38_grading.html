@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grading students</title>
+  </head>
+  <body>
+    <h2>
+      38. Write a JavaScript program to evaluate a student's total marks across
+      various examinations and determine their grade. The grading criteria are
+      as follows:
+    </h2>
+
+    <ul>
+      <li>
+        If the total marks fall within the range of 89 to 100 (inclusive), the
+        student receives an A+ grade.
+      </li>
+      <li>
+        If the examination is labeled as "Final-exam," the student will receive
+        an A+ grade only if their total marks are 90 or greater. Assume that
+        final examination means we pass 'true' as second parameter otherwise
+        blank.
+      </li>
+      <li>
+        If the student achieves an A+ grade, the program should return 'true';
+        otherwise, it should return 'false'.
+      </li>
+    </ul>
+
+    <form action="">
+      <label for="marks">Total Marks : </label>
+      <input type="text" id="marks" required />
+      <button id="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+  </body>
+  <script>
+    document.getElementById("submit").addEventListener("click", function (e) {
+      e.preventDefault();
+      const marks = parseInt(document.getElementById("marks").value);
+
+      const result = document.getElementById("result");
+
+      result.innerHTML = grading(marks);
+      result.style.color = "blue";
+      result.style.backgroundColor = "yellow";
+      result.style.display = "inline-block";
+      result.style.padding = "10px";
+      result.style.margin = "20px";
+      result.style.fontSize = "40px";
+    });
+    const grading = function (totalMarks, isFinalExam) {
+      if (isNaN(totalMarks)) {
+        return "Please enter VALID marks";
+      } else if (totalMarks < 0 || totalMarks > 100) {
+        return "The marks is out of range";
+      } else {
+        if (isFinalExam) {
+          if (totalMarks >= 90 && totalMarks <= 100) {
+            return "A+";
+          } else if (totalMarks >= 80 && totalMarks <= 89) {
+            return "A";
+          } else if (totalMarks >= 70 && totalMarks <= 79) {
+            return "B+";
+          } else if (totalMarks >= 60 && totalMarks <= 69) {
+            return "B";
+          } else if (totalMarks >= 50 && totalMarks <= 59) {
+            return "C+";
+          } else if (totalMarks >= 40 && totalMarks <= 49) {
+            return "C";
+          } else if (totalMarks >= 0 && totalMarks <= 39) {
+            return "N";
+          }
+        } else {
+          if (totalMarks >= 89 && totalMarks <= 100) {
+            return "A+";
+          } else if (totalMarks >= 80 && totalMarks < 89) {
+            return "A";
+          } else if (totalMarks >= 70 && totalMarks <= 79) {
+            return "B+";
+          } else if (totalMarks >= 60 && totalMarks <= 69) {
+            return "B";
+          } else if (totalMarks >= 50 && totalMarks <= 59) {
+            return "C+";
+          } else if (totalMarks >= 40 && totalMarks <= 49) {
+            return "C";
+          } else if (totalMarks >= 0 && totalMarks <= 39) {
+            return "N";
+          }
+        }
+      }
+    };
+
+    // console.log(grading("98", true));
+  </script>
+</html>

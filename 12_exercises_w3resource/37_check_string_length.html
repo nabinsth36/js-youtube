@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      37. Write a JavaScript program to produce a new string that has the first
+      3 characters in lower case from a given string. If the string length is
+      less than 3 convert all the characters to upper case.
+    </h2>
+  </body>
+  <script>
+    const produceString = function (str) {
+      return str.length > 3
+        ? str.substring(0, 3).toLowerCase() + str.substring(3, str.length)
+        : str.toUpperCase();
+    };
+
+    console.log(produceString("JavaScript"));
+    console.log(produceString("PYTHON"));
+    console.log(produceString("ram"));
+    console.log(produceString("go"));
+    console.log(produceString("a+"));
+  </script>
+</html>
