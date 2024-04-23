@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check set of 3 numbers</title>
+  </head>
+  <body>
+    <h2>
+      41. Write a JavaScript program to check a set of three numbers; if the
+      three numbers are the same return 30; otherwise return 20; and if two
+      numbers are the same return 40.
+    </h2>
+  </body>
+  <script>
+    const check3_num = (x, y, z) => {
+      // Check if x, y, and z are equal
+      if (x == y && y == z) {
+        return 30;
+      }
+
+      // Check if at least two of x, y and z are equal
+      if (x == y || y == z || x == z) {
+        return 40;
+      }
+
+      // Return 20 if none of the conditions are met
+      return 20;
+      x;
+    };
+
+    console.log(check3_num(13, 10, 15));
+  </script>
+</html>
