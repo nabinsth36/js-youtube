@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      49. Write a JavaScript program to replace every character in a given
+      string with the character following it in the alphabet.
+    </h2>
+
+    <script>
+      function letterChanges(text) {
+        let s = text.split("");
+        for (let i = 0; i < s.length; i++) {
+          // Check if the character is a lowercase letter
+          if (/[a-z]/.test(s[i])) {
+            // If it's 'z', replace it with 'a'
+
+            if (s[i] === "z") {
+              s[i] = "a";
+            } else {
+              // Otherwise, replace it with the next letter in the alphabet
+              s[i] = String.fromCharCode(s[i].charCodeAt(0) + 1);
+            }
+          }
+
+          // Check if the character is uppercase letter
+          else if (/[A-Z]/.test(s[i])) {
+            // If it's 'Z' replace it with 'A'
+
+            if (s[i] === "Z") {
+              s[i] = "A";
+            } else {
+              // Otherwise, replace it with the next letter in the alphabet
+              s[i] = String.fromCharCode(s[i].charCodeAt(0) + 1);
+            }
+          }
+
+          // Convert vowels to upperrcase
+
+          switch (s[i]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+              s[i] = s[i].toUpperCase();
+          }
+        }
+        // Join the array back into a string
+        return s.join("");
+      }
+
+      console.log(letterChanges("World"));
+    </script>
+  </body>
+</html>

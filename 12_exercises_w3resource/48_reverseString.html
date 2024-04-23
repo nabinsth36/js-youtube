@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Reversal</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transition: background-color 0.5s ease;
+      }
+
+      .container {
+        max-width: 500px;
+        width: 90%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: background-color 0.5s ease;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+        color: #555;
+      }
+
+      input[type="text"],
+      button {
+        width: calc(100% - 20px);
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 6px;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      input[type="text"] {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #output {
+        margin-top: 30px;
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Night mode styles */
+      body.dark-mode {
+        background-color: #121212;
+        color: #fff;
+      }
+
+      .container.dark-mode {
+        background-color: #333;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+
+      input[type="text"].dark-mode,
+      button.dark-mode,
+      #output.dark-mode {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>String Reversal</h1>
+      <h2>Write a JavaScript program to reverse a given string.</h2>
+      <input type="text" id="userInput" placeholder="Enter a string" />
+      <button id="reverseButton">Reverse</button>
+      <div id="output"></div>
+      <button id="toggleModeButton">Toggle Night Mode</button>
+    </div>
+
+    <script>
+      const reverse = document.getElementById("reverseButton");
+      const toggleMode = document.getElementById("toggleModeButton");
+
+      reverse.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userValue = document.getElementById("userInput").value.trim();
+        const output = document.getElementById("output");
+
+        if (userValue === "") {
+          output.textContent = "Please enter a string to reverse ";
+          return;
+        }
+
+        const stringReversed = reverseString(userValue);
+        output.textContent = stringReversed;
+      });
+
+      toggleMode.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        document
+          .querySelectorAll('.container, input[type="text"], button, #output')
+          .forEach((item) => {
+            item.classList.toggle("dark-mode");
+          });
+      });
+
+      function reverseString(str) {
+        return str.split("").reverse().join("");
+      }
+    </script>
+  </body>
+</html>

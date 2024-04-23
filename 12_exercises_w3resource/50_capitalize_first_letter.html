@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      50. Write a JavaScript program to capitalize the first letter of each word
+      in a given string.
+    </h2>
+    <form action="">
+      <input type="text" id="userInput" />
+      <button id="btnChange">Capitalize First Letter!</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+      const btnChange = document.getElementById("btnChange");
+
+      btnChange.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userInput = document.getElementById("userInput").value;
+
+        const output = document.getElementById("output");
+
+        const newStr = capitalizeWords(userInput);
+
+        output.innerHTML = newStr;
+      });
+
+      function capitalizeWords(str) {
+        let s = str.split(" ");
+        let a = [];
+        for (let i = 0; i < s.length; i++) {
+          a.push(s[i].charAt(0).toUpperCase() + s[i].slice(1, s[i].length));
+          //   let newWord = a.join("");
+        }
+        console.log(a);
+        return a.join(" ");
+
+        // console.log(newStr);
+      }
+
+      // capitalizeWords("our country is beautiful");
+    </script>
+  </body>
+</html>

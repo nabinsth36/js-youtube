@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      43. Write a JavaScript program to check from three given numbers (non
+      negative integers) that two or all of them have the same rightmost digit.
+    </h2>
+  </body>
+  <script>
+    function rightmost_digit(x, y, z) {
+      return x % 10 === y % 10 && y % 10 === z % 10 ? true : false;
+    }
+
+    console.log(rightmost_digit(32, 12, 22));
+  </script>
+</html>
