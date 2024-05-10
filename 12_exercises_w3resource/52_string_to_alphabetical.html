@@ -19,12 +19,24 @@
   </body>
 
   <script>
+    document.getElementById("btn-sort").addEventListener("click", function (e) {
+      e.preventDefault();
+      const userInput = document.getElementById("user-input").value;
+      const output = document.getElementById("output");
+
+      if (userInput === "") {
+        output.innerText = "Please enter valie text";
+      } else {
+        output.innerText = strToAlphabetical(userInput);
+      }
+    });
+
     function strToAlphabetical(str) {
       const strs = str.split("").sort().join("");
 
-      console.log(strs);
+      return strs;
     }
 
-    strToAlphabetical("abstract word");
+    console.log(strToAlphabetical("abstract word"));
   </script>
 </html>
