@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      51. Write a JavaScript application that transforms a provided numerical
+      value into hours and minutes.
+    </h2>
+  </body>
+  <script>
+    function numberToTime(num) {
+      const date = new Date();
+      return date.getHours(num);
+    }
+
+    console.log(numberToTime(50));
+  </script>
+</html>
