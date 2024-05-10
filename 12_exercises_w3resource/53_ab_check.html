@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ab check</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="user-input" />
+      <button id="btn-check">Check String</button>
+      <div id="output"></div>
+    </form>
+  </body>
+  <script>
+    document
+      .getElementById("btn-check")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const userInput = document.getElementById("user-input").value;
+        const output = document.getElementById("output");
+        if (userInput === "") {
+          output.innerText = "Please enter valid text";
+        } else if (userInput === Number) {
+          output.innerText = "Please enter string";
+        } else if (!isNaN(userInput)) {
+          output.innerText = "Please enter valid character";
+        } else {
+          output.innerText = ab_check(userInput);
+        }
+      });
+
+    function ab_check(str) {
+      return /a...b/.test(str) || /b...a/.test(str);
+    }
+    console.log(ab_check("chainsbreak"));
+  </script>
+</html>
