@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter of a string to Alphabetical</title>
+  </head>
+  <body>
+    <h2>
+      52. Write a JavaScript program to convert letters of a given string
+      alphabetically.
+
+      <form action="">
+        <input type="text" id="user-input" />
+        <button id="btn-sort">Sort in Alphabetical</button>
+        <div id="output"></div>
+      </form>
+    </h2>
+  </body>
+
+  <script>
+    function strToAlphabetical(str) {
+      const strs = str.split("").sort().join("");
+
+      console.log(strs);
+    }
+
+    strToAlphabetical("abstract word");
+  </script>
+</html>
