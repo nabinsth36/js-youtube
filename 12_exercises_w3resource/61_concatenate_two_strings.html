@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      61. Write a JavaScript program to concatenate two strings except for their
+      first character.
+    </h2>
+  </body>
+  <script>
+    function concate2str(str1, str2) {
+      const firstStr = str1.substring(1, str1.length);
+      const secondStr = str2.substring(1, str2.length);
+      const newStr = firstStr + secondStr;
+      return newStr;
+    }
+
+    let a = "Java";
+    let b = "Script";
+    console.log(concate2str(a, b));
+  </script>
+</html>
