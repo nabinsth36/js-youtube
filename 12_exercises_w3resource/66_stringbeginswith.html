@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      66. Write a JavaScript program to display the city name if the string
+      begins with "Los" or "New" otherwise return blank.
+    </h1>
+  </body>
+  <script>
+    function str_begins_with(str) {
+      //   if (str.startsWith("Los") || str.startsWith("New")) {
+      if (str.substring(0, 3) === "Los" || str.substring(0, 3) === "New") {
+        return str;
+      } else {
+        return "";
+      }
+    }
+
+    console.log(str_begins_with("LosAngelas"));
+    console.log(str_begins_with("NewHampshire"));
+    console.log(str_begins_with("New York"));
+    console.log(str_begins_with("Chitwan"));
+    console.log(str_begins_with("Kathmandu"));
+  </script>
+</html>
