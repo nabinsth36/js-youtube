@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ab check</title>
+
+    <title>ab_check</title>
   </head>
   <body>
+    <h2>
+      53. Write a JavaScript program to check whether the characters a and b are
+      separated by exactly 3 places anywhere (at least once) in a given string.
+    </h2>
     <form action="">
       <input type="text" id="user-input" />
-      <button id="btn-check">Check String</button>
-      <div id="output"></div>
+      <button id="btn-check">Check</button>
     </form>
+
+    <div id="result"></div>
   </body>
   <script>
     document
@@ -33,6 +39,7 @@
     function ab_check(str) {
       return /a...b/.test(str) || /b...a/.test(str);
     }
+
     console.log(ab_check("chainsbreak"));
   </script>
 </html>

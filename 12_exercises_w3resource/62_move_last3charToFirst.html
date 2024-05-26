@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      62. Write a JavaScript program to move the last three characters to the
+      start of a given string. The string length must be greater than or equal
+      to three.
+    </h2>
+  </body>
+  <script>
+    function movelast3char(str) {
+      if (str.length > 1) {
+        return str.slice(-3) + str.slice(0, -3);
+      }
+      return str;
+    }
+
+    let myword = "Nirdesh";
+    console.log(movelast3char(myword));
+  </script>
+</html>

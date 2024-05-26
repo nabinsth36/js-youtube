@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      59. Write a JavaScript program to extract the first half of a even string.
+    </h2>
+  </body>
+  <script>
+    function extract_half_even_string(str) {
+      const strLen = str.split("").length;
+      if (strLen % 2 === 1) {
+        return false;
+      } else {
+        const firstHalfLen = strLen / 2;
+        return str.slice(0, firstHalfLen);
+      }
+    }
+
+    const myStr = "Hariharanath";
+    console.log(extract_half_even_string(myStr));
+  </script>
+</html>

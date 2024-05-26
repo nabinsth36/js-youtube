@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      56. Write a JavaScript program to divide two positive numbers and return
+      the result as string with properly formatted commas.
+    </h2>
+  </body>
+  <script>
+    function division_string_format(num1, num2) {
+      if (num2 === 0) {
+        return "Cannot divide by zero";
+      }
+      const result = num1 / num2;
+
+      const formattedResult = result.toLocaleString(undefined, {
+        maximumFractionDigits: 3,
+      });
+
+      return formattedResult;
+    }
+
+    const dividend = 15930063000;
+    const divisor = 15;
+    const formattedResult = division_string_format(dividend, divisor);
+    console.log(formattedResult);
+  </script>
+</html>

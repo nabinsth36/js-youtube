@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ab_check</title>
+  </head>
+  <body>
+    <h2>
+      54. Write a JavaScript program to count the number of vowels in a given
+      string.
+    </h2>
+    <form action="">
+      <input type="text" id="user-input" />
+      <button id="btn-check">Check</button>
+    </form>
+
+    <div id="result"></div>
+  </body>
+  <script>
+    document
+      .getElementById("btn-check")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const userInput = document.getElementById("user-input").value;
+        const result = document.getElementById("result");
+
+        result.innerText = countVowels(userInput);
+      });
+    function countVowels(str) {
+      return str.replace(/[^aeiou]/g, "").length;
+    }
+
+    console.log(countVowels("apple"));
+  </script>
+</html>

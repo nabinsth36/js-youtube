@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      57. Write a JavaScript program to create one string of specified copies
+      (positive numbers) of a given string.
+    </h2>
+  </body>
+  <script>
+    function specifiedCopiesString(str, num) {
+      if (num < 0) {
+        return false;
+      } else {
+        return str.repeat(num);
+      }
+    }
+
+    let word = "abc";
+    let time = 3;
+    let res = specifiedCopiesString(word, time);
+    console.log(res);
+    let word2 = "God";
+    let time2 = 10;
+    let res2 = specifiedCopiesString(word2, time2);
+    console.log(res2);
+  </script>
+</html>

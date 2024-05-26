@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      64. Write a JavaScript program to concatenate two strings and return the
+      result. If the length of the strings does not match, then remove the
+      characters from the longer string.
+    </h2>
+  </body>
+  <script>
+    function removelong(str1, str2) {
+      //   if (str1.length === str2.length) {
+      //     return str1 + str2;
+      //   } else if (str1.length > str2.length) {
+      //     const removable = str1.length - str2.length;
+      //     const newStr = str1.slice(0, -removable);
+      //     return newStr + str2;
+      //   } else if (str2.length > str1.length) {
+      //     const removable = str2.length - str1.length;
+      //     const newStr = str2.slice(0, -removable);
+      //     return str1 + newStr;
+      //   }
+
+      const m = Math.min(str1.length, str2.length);
+      return str1.substring(str1.length - m) + str2.substring(str2.length - m);
+    }
+
+    console.log(removelong("harisaran", "ramayankatha"));
+    console.log(removelong("nabin", "maiya"));
+    console.log(removelong("naman", "nirdesh"));
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      63. Write a JavaScript program to create a string using the middle three
+      characters of a given string of odd length. The string length must be
+      greater than or equal to three.
+    </h2>
+  </body>
+  <script>
+    function middle3(str) {
+      if (str.length >= 3 && str.length % 2 === 1) {
+        const mid = (str.length + 1) / 2;
+        return str.slice(mid - 2, mid + 1);
+        return x.slice(-n);
+      }
+      return str;
+    }
+    console.log(middle3("worldwide"));
+    console.log(middle3("worldwides"));
+  </script>
+</html>
