@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      67. Write a JavaScript program to create a new string from a given string.
+      This program removes the first and last characters of the string if the
+      first or last character is 'P'. Return the original string if the
+      condition is not satisfied.
+    </h1>
+  </body>
+  <script>
+    function check_first_and_last_char(str) {
+      if (str.charAt(0) === "P" || str.charAt(str.length - 1) === "P") {
+        return str.substring(1, str.length - 1);
+      } else {
+        return str;
+      }
+    }
+
+    console.log(check_first_and_last_char("POPUP"));
+    console.log(check_first_and_last_char("popup"));
+    console.log(check_first_and_last_char("POPPED"));
+    console.log(check_first_and_last_char("popped"));
+    console.log(check_first_and_last_char("shotup"));
+    console.log(check_first_and_last_char("SHOTUP"));
+  </script>
+</html>
