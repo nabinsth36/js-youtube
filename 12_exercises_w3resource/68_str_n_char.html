@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      68. Write a JavaScript program to create a new string using the first and
+      last n characters from a given string. The string length must be larger
+      than or equal to n.
+    </h2>
+  </body>
+  <script>
+    function create_new_string(str, n) {
+      if (str.length >= n) {
+        let new_str = str.substring(0, n) + str.substring(str.length - n);
+
+        return new_str;
+      }
+    }
+
+    console.log(create_new_string("Nabins", 2));
+  </script>
+</html>
