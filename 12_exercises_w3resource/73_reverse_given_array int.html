@@ -12,14 +12,16 @@
     </h2>
   </body>
   <script>
-    function reverse_array(int) {
-      if (int.length === 3) {
-        let x = int[0];
-        int[0] = int[2];
-        int[2] = x;
+    function reverse_array(intArr) {
+      return intArr.map((element, idx, arr) => arr[arr.length - 1 - idx]);
 
-        return int;
-      }
+      // if (intArr.length === 3) {
+      //   let x = intArr[0];
+      //   intArr[0] = intArr[2];
+      //   intArr[2] = x;
+
+      //   return intArr;
+      // }
     }
     const myInt = [25, 35, 45];
     console.log(reverse_array(myInt));
