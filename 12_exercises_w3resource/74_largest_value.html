@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      74. Write a JavaScript program to find the largest value between the first
+      and last elements and set all the other elements to that value. Display
+      the updated array.
+    </h1>
+  </body>
+  <script>
+    function largest_val(num) {
+      let max_val = Math.max(num[0], num[num.length - 1]);
+      for (let i = 1; i < num.length - 1; i++) {
+        num[i] = max_val;
+      }
+      return num;
+    }
+
+    myVal = [5, 20, 25, 80, 125];
+
+    console.log(largest_val(myVal));
+  </script>
+</html>
