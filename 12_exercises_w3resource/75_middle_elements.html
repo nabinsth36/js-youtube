@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      75. Write a JavaScript program to create an array taking the middle
+      elements of the two arrays of integer and each length 3.
+    </h1>
+  </body>
+  <script>
+    function middle_elements(arr1, arr2) {
+      if (arr1.length === 3 && arr2.length === 3) {
+        let mid_arr = [];
+        mid_arr.push(arr1[1]);
+        mid_arr.push(arr2[1]);
+        return mid_arr;
+      }
+    }
+
+    let arr1 = [5, 9, 25];
+    let arr2 = [35, 20, 15];
+
+    console.log(middle_elements(arr1, arr2));
+  </script>
+</html>
