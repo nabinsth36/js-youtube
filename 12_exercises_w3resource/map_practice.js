@@ -27,7 +27,7 @@ console.log(double_number(numbers));
 // console.log(stringItUp(myNums));
 
 // Capitalize Names
-function capitalize(arr) {
+/* function capitalize(arr) {
   return arr.map(
     (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
   );
@@ -36,3 +36,41 @@ function capitalize(arr) {
 const myStrs = ["superman", "spiderman", "hulk", "ironman"];
 
 console.log(capitalize(myStrs));
+ */
+
+console.log(`Write a function that takes an array of objects representing people, where each object has a name and age property, and returns a new array where each person's name is capitalized. You can use the map function to accomplish this.
+`);
+
+function capitalizeNames(people) {
+  // Use the map function to capitalize each person's name
+  return people.map((person) => {
+    return {
+      name: person.name.charAt(0).toUpperCase() + person.name.slice(1),
+      age: person.age,
+    };
+  });
+}
+
+function ageQuery(people) {
+  return people.filter((person) => {
+    person.age > 30;
+    {
+      return person.name.charAt(0).toUpperCase() + person.name.slice(1);
+    }
+  });
+}
+// Test the function
+const people = [
+  { name: "john", age: 30 },
+  { name: "emma", age: 25 },
+  { name: "nabin", age: 44 },
+  { name: "maiya", age: 39 },
+  { name: "nirdesh", age: 8 },
+  { name: "naman", age: 13 },
+];
+
+const capitalizedNames = capitalizeNames(people);
+console.log(capitalizedNames);
+
+const ThirtyAndAbove = ageQuery(people);
+console.log(ThirtyAndAbove);
