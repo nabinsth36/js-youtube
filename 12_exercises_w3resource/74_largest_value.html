@@ -15,13 +15,14 @@
   <script>
     function largest_val(num) {
       let max_val = Math.max(num[0], num[num.length - 1]);
+      console.log("max value is : ", max_val);
       for (let i = 1; i < num.length - 1; i++) {
         num[i] = max_val;
       }
       return num;
     }
 
-    myVal = [5, 20, 25, 80, 125];
+    myVal = [135, 12, 11, 33, 59];
 
     console.log(largest_val(myVal));
   </script>
