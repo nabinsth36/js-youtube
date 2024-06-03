@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      76. Write a JavaScript program to create an array by taking the first and
+      last elements from a given array of integers. The length must be larger
+      than or equal to 1.
+    </h1>
+  </body>
+  <script>
+    function first_last(arr1, arr2) {
+      let result = [];
+
+      arr1.length > 1 && arr2.length > 1
+        ? result.push(
+            arr1[0],
+            arr1[arr1.length - 1],
+            arr2[0],
+            arr2[arr2.length - 1]
+          )
+        : false;
+      return result;
+    }
+
+    data1 = [28, 44, 32, 125];
+    data2 = [95, 73, 28, 56, 99];
+
+    console.log(first_last(data1, data2));
+  </script>
+</html>
