@@ -13,15 +13,16 @@
   </body>
   <script>
     function reverse_array(intArr) {
-      return intArr.map((element, idx, arr) => arr[arr.length - 1 - idx]);
-
+      // return intArr.map((element, idx, arr) => arr[arr.length - 1 - idx]);
+      /////////////////////
       // if (intArr.length === 3) {
       //   let x = intArr[0];
       //   intArr[0] = intArr[2];
       //   intArr[2] = x;
-
       //   return intArr;
       // }
+      /////////////////////////
+      // return intArr.reverse();
     }
     const myInt = [25, 35, 45];
     console.log(reverse_array(myInt));
