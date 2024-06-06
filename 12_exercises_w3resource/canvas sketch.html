@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Sketch</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    <script>
+      window.onload = function () {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const img = new Image();
+        img.src = "./css_logo.png"; // Replace with the path to your image
+
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0);
+          createSketchEffect(ctx, canvas.width, canvas.height);
+        };
+
+        function createSketchEffect(ctx, width, height) {
+          const imageData = ctx.getImageData(0, 0, width, height);
+          const data = imageData.data;
+
+          for (let y = 0; y < height; y += 10) {
+            for (let x = 0; x < width; x += 10) {
+              const index = (y * width + x) * 4;
+              const red = data[index];
+              const green = data[index + 1];
+              const blue = data[index + 2];
+
+              ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`;
+              ctx.fillRect(x, y, 10, 10);
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
