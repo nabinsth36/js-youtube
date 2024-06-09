@@ -8,6 +8,8 @@
 
 const largest_string = (strArr) => {
   let max = strArr[0].length;
+  console.log(max);
+
   strArr.map((v) => (max = Math.max(max, v.length)));
   result = strArr.filter((v) => v.length == max);
   return result;
