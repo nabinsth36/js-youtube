@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      77. Write a JavaScript program to test whether an array of integers of
+      length 2 contains 1 or 3.
+    </h1>
+  </body>
+  <script>
+    function contains1or3(arr) {
+      return arr.length === 2 ? arr.includes(1) || arr.includes(3) : false;
+    }
+
+    let arrData = [5, 2];
+    console.log(contains1or3(arrData));
+  </script>
+</html>
